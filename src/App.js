@@ -23,7 +23,7 @@ function App() {
       .getPhotos({
         query: query,
         page: 1,
-        perPage: 578,
+        perPage: 500,
         orientation: 'landscape',
       })
       .then((result) => {
@@ -33,10 +33,10 @@ function App() {
         } else {
           let data = [];
           let info = result.response.results;
-          for (let index = 0; index < 8; index++) {
+          for (let index = 0; index < info.length; index++) {
             const i = Math.floor(Math.random() * info.length);
 
-            !data.includes(info[i]) && data.push(info[i]);
+            !data.includes(info[i]) && data.length < 8 && data.push(info[i]);
           }
           setImages(data);
         }
