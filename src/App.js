@@ -33,7 +33,7 @@ function App() {
         } else {
           let data = [];
           let info = result.response.results;
-          for (let index = 0; index < 12; index++) {
+          for (let index = 0; index < 8; index++) {
             const i = Math.floor(Math.random() * info.length);
 
             !data.includes(info[i]) && data.push(info[i]);

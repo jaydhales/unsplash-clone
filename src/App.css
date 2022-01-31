@@ -47,6 +47,10 @@ section {
   box-shadow: 0 0 10px #00000050;
 }
 
+.card div {
+  border-radius: 10px;
+}
+
 .desc {
   position: absolute;
   bottom: 0;
@@ -139,7 +143,88 @@ section {
 
 @media screen and (min-width: 700px) {
   section {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    width: 650px;
+    height: 950px;
+    padding-bottom: 5rem;
+  }
+
+  .loader,
+  .card {
+    width: auto;
+    height: auto;
+  }
+
+  .loader:nth-of-type(2),
+  .loader:nth-of-type(7) {
+    background-size: 200px 600px, 150px 15px, 100px 15px;
+    background-position: -200px 0, 15px 390px, 15px 420px;
+    animation: bigload 1.5s infinite;
+  }
+
+  @keyframes bigload {
+    to {
+      background-position: 200px 0, 15px 390px, 15px 420px;
+    }
+  }
+
+  .loader:nth-of-type(1),
+  .card:nth-of-type(1) {
+    grid-area: 1/1/3/3;
+  }
+  .loader:nth-of-type(2),
+  .card:nth-of-type(2) {
+    grid-area: 1/3/4/5;
+  }
+  .loader:nth-of-type(3),
+  .card:nth-of-type(3) {
+    grid-area: 1/5/3/7;
+  }
+  .loader:nth-of-type(4),
+  .card:nth-of-type(4) {
+    grid-area: 3/1/5/3;
+  }
+  .loader:nth-of-type(5),
+  .card:nth-of-type(5) {
+    grid-area: 3/5/5/7;
+  }
+  .loader:nth-of-type(6),
+  .card:nth-of-type(6) {
+    grid-area: 5/1/7/3;
+  }
+  .loader:nth-of-type(7),
+  .card:nth-of-type(7) {
+    grid-area: 4/3/7/5;
+  }
+  .loader:nth-of-type(8),
+  .card:nth-of-type(8) {
+    grid-area: 5/5/7/7;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  section {
+    width: 900px;
+    height: 1400px;
+    gap: 2rem;
+  }
+
+  .loader {
+    background-size: 200px 600px, 250px 15px, 200px 15px;
+    background-position: -200px 0, 15px 390px, 15px 420px;
+    animation: bigload 1.5s infinite;
+  }
+
+  .loader:nth-of-type(2),
+  .loader:nth-of-type(7) {
+    background-size: 400px 800px, 250px 15px, 200px 15px;
+    background-position: -200px 0, 15px 550px, 15px 580px;
+    animation: biggerload 1.5s infinite;
+  }
+
+  @keyframes biggerload {
+    to {
+      background-position: 200px 0, 15px 550px, 15px 580px;
+    }
   }
 }
